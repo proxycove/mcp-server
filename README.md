@@ -131,6 +131,19 @@ Transport is **streamable HTTP, stateless** — `POST` only, one JSON-RPC reques
 
 ---
 
+## Agent skill
+
+Beyond the tool descriptions, this repo ships an [agent skill](skills/proxycove-proxies/SKILL.md) that
+tells an agent *which* tool to reach for: how to pick a proxy type for a job, when a sticky session is
+required, what each error code actually means, and the rules that keep the human in control — never
+handle payment details, quote the price before spending, save the key.
+
+```bash
+npx skills add proxycove/mcp-server
+```
+
+---
+
 ## Tools
 
 | Tool | What it does | API key |
