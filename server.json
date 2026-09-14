@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.proxycove/mcp-server",
+  "title": "ProxyCove",
+  "description": "Buy and manage residential, mobile and datacenter proxies in 170+ countries, prepaid per GB",
+  "version": "1.0.0",
+  "websiteUrl": "https://proxycove.com",
+  "repository": {
+    "url": "https://github.com/proxycove/mcp-server",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://proxycove.com/images/android-chrome-512x512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.proxycove.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "API key as 'Bearer pc_live_...'. Leave empty to start: call create_account to get a key.",
+          "placeholder": "Bearer pc_live_...",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

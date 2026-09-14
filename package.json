@@ -1,0 +1,29 @@
+{
+  "name": "proxycove-mcp-server",
+  "version": "1.0.0",
+  "description": "ProxyCove MCP server — buy and manage proxies from AI agents (Claude, Cursor, ChatGPT)",
+  "type": "module",
+  "main": "src/index.js",
+  "license": "MIT",
+  "homepage": "https://proxycove.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proxycove/mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/proxycove/mcp-server/issues"
+  },
+  "keywords": ["mcp", "model-context-protocol", "proxy", "proxies", "residential-proxy", "mobile-proxy", "scraping", "ai-agent"],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "zod": "^3.24.1"
+  }
+}
