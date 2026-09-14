@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "proxycove": {
+      "type": "http",
+      "url": "https://mcp.proxycove.com/mcp",
+      "description": "Buy and manage residential, mobile and datacenter proxies in 170+ countries, prepaid per GB. No signup forms: the agent creates its own account, hands the human a payment link and receives working connection credentials.",
+      "headers": {
+        "Authorization": "Bearer ${PROXYCOVE_API_KEY}"
+      }
+    }
+  }
+}
