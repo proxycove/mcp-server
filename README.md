@@ -8,9 +8,10 @@
 https://mcp.proxycove.com/mcp     ← remote endpoint (streamable HTTP)
 ```
 
-> **Status: private beta.** The service is live and in daily use, but the public
-> endpoint above opens with the public launch. Watch this repository — the URL
-> and the setup snippets below are final and will work as written on day one.
+> **Status: live.** The endpoint above is public — connect and use it.
+> Anonymous calls are allowed for `get_pricing`, `list_locations` and
+> `create_account`; everything else needs a key. Clients that prefer OAuth 2.1
+> can discover it at `/.well-known/oauth-protected-resource`.
 
 **Who it's for:** developers building scraping / automation / testing agents, anyone whose agent needs an exit IP in a specific country, and MCP clients that want a proxy provider they can call directly instead of wrapping a REST API by hand.
 

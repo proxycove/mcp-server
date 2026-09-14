@@ -212,6 +212,21 @@ app.use(express.json({ limit: '1mb' }));
 
 app.get('/healthz', (req, res) => res.json({ ok: true, service: 'proxycove-mcp' }));
 
+// OAuth 2.1 protected-resource metadata. Clients such as Claude read this to
+// learn that the service supports one-click sign-in and where its authorization
+// server lives. Anonymous access is deliberately kept: get_pricing,
+// list_locations and create_account still work without a key.
+app.get('/.well-known/oauth-protected-resource', (req, res) => {
+  const site = process.env.SITE_URL || 'https://proxycove.com';
+  res.json({
+    resource: `https://mcp.proxycove.com${SECRET_PATH}`,
+    authorization_servers: [site],
+    bearer_methods_supported: ['header'],
+    scopes_supported: ['proxycove'],
+    resource_documentation: `${site}/en/ai-agents/`
+  });
+});
+
 app.post(SECRET_PATH, async (req, res) => {
   const clientIp = String(
     req.headers['cf-connecting-ip'] ||
